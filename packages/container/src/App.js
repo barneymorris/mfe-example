@@ -1,7 +1,8 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import MarketingApp from "./components/MarketingApp";
 import Header from "./components/Header";
+import NotFound from "./components/NotFound";
 import {
   StylesProvider,
   createGenerateClassName,
@@ -21,7 +22,10 @@ export default () => {
         <ThemeProvider theme={theme}>
           <div>
             <Header />
-            <MarketingApp />
+            <Switch>
+              <Route path="/" component={MarketingApp} />
+              <Route path="*" component={NotFound} />
+            </Switch>
           </div>
         </ThemeProvider>
       </StylesProvider>

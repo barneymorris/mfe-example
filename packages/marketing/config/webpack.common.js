@@ -1,6 +1,9 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+  output: {
+    publicPath: "http://localhost:9081/",
+  },
   module: {
     rules: [
       {
@@ -27,6 +30,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+      inject: true,
+      publicPath: "/",
+      filename: "index.html",
     }),
   ],
 };

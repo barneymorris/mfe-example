@@ -1,17 +1,17 @@
 import React from "react";
 import { Switch, Route, Router } from "react-router-dom";
-import Landing from "./components/Landing";
-import Pricing from "./components/Pricing";
 import {
   StylesProvider,
   ThemeProvider,
   createGenerateClassName,
 } from "@mui/styles";
 import { createTheme } from "@mui/material";
+import SignIn from "./components/Signin";
+import SignUp from "./components/Signup";
 
 const theme = createTheme();
 const generateClassName = createGenerateClassName({
-  productionPrefix: "ma",
+  productionPrefix: "au",
 });
 
 export default ({ history }) => {
@@ -21,8 +21,8 @@ export default ({ history }) => {
         <ThemeProvider theme={theme}>
           <Router history={history}>
             <Switch>
-              <Route path="/pricing" component={Pricing} />
-              <Route path="/" component={Landing} />
+              <Route path="/auth/signin" component={SignIn} />
+              <Route path="/auth/signup" component={SignUp} />
             </Switch>
           </Router>
         </ThemeProvider>

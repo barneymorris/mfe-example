@@ -2,7 +2,7 @@
   "name": "marketing",
   "version": "1.0.0",
   "scripts": {
-    "start": "webpack serve --config config/webpack.dev.js",
+    "start": "webpack serve --config config/webpack.dev.js --client-logging verbose",
     "build": "webpack --config config/webpack.prod.js"
   },
   "dependencies": {
