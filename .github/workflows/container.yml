@@ -18,7 +18,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - run: npm config set legacy-peer-deps true
       - run: npm install
       - run: npm run build
       - run: echo 'ACTIONS_ALLOW_UNSECURE_COMMANDS=true' >> $GITHUB_ENV
