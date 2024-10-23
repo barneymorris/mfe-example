@@ -18,9 +18,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 16
       - run: npm config set legacy-peer-deps true
       - run: npm install
       - run: npm run build
