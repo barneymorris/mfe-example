@@ -1,6 +1,30 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
 import MarketingApp from "./components/MarketingApp";
+import Header from "./components/Header";
+import {
+  StylesProvider,
+  createGenerateClassName,
+  ThemeProvider,
+} from "@mui/styles";
+import { createTheme } from "@mui/material";
+
+const theme = createTheme();
+const generateClassName = createGenerateClassName({
+  productionPrefix: "co",
+});
 
 export default () => {
-  return <MarketingApp />;
+  return (
+    <BrowserRouter>
+      <StylesProvider generateClassName={generateClassName}>
+        <ThemeProvider theme={theme}>
+          <div>
+            <Header />
+            <MarketingApp />
+          </div>
+        </ThemeProvider>
+      </StylesProvider>
+    </BrowserRouter>
+  );
 };
