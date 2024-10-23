@@ -12,6 +12,7 @@ import {
   Card,
   Button,
 } from "@mui/material";
+import Asset from "./../assets/asset.png";
 
 function Copyright() {
   return (
@@ -151,6 +152,12 @@ export default function Album() {
       </main>
       {/* Footer */}
       <footer className={classes.footer}>
+        <div>
+          I am asset below:
+          <br />
+          <img src={Asset} alt="asset" style={{ width: 50 }} />
+        </div>
+
         <Typography variant="h6" align="center" gutterBottom>
           Footer
         </Typography>
