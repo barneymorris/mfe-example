@@ -6,6 +6,7 @@ import { createMemoryHistory, createBrowserHistory } from "history";
 // Mount function to start up the app
 const mount = (el, { onNavigate, defaultHistory }) => {
   const history = defaultHistory || createMemoryHistory();
+  history.push(window.location.pathname);
 
   if (onNavigate) {
     history.listen(onNavigate);
@@ -30,7 +31,9 @@ if (process.env.NODE_ENV === "development") {
   const devRoot = document.querySelector("#_marketing-dev-root");
 
   if (devRoot) {
-    mount(devRoot, { defaultHistory: createBrowserHistory() });
+    mount(devRoot, {
+      defaultHistory: createBrowserHistory(),
+    });
   }
 }
 
